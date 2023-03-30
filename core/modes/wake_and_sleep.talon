@@ -3,7 +3,6 @@ mode: all
 -
 ^(welcome back)+$:
     user.mouse_wake()
-    user.history_enable()
     user.talon_mode()
 drowse [<phrase>]$:
     user.switcher_hide_running()
@@ -13,5 +12,3 @@ drowse [<phrase>]$:
     user.mouse_sleep()
     speech.disable()
     user.engine_sleep()
-# ^talon sleep [<phrase>]$: speech.disable()
-# ^(talon wake)+$: speech.enable()
