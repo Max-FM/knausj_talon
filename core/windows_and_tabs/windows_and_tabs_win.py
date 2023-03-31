@@ -49,7 +49,7 @@ class AppActions:
         actions.key("alt-shift-`")
 
 @mod.action_class
-class AppActions:
+class Actions:
     def window_maximize():
         """Maximize the active window."""
         actions.key("super-up")
