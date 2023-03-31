@@ -12,4 +12,5 @@ class Actions:
         """Runs PowerToys Run"""
         actions.key("escape")
         actions.key("alt-space")
+        print("search_text: " + search_text)
         actions.insert(search_text)
