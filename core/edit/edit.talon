@@ -69,47 +69,47 @@ indent [more]: edit.indent_more()
 (indent less | out dent | de dent): edit.indent_less()
 
 # deleting
-(clear | wipe | chuck) line: edit.delete_line()
+(clear | chuck) line: edit.delete_line()
 
-(clear | wipe | chuck) (left | west): key(backspace)
+(clear | chuck) (left | west): key(backspace)
 
-(clear | wipe | chuck) (right | east): key(delete)
+(clear | chuck) (right | east): key(delete)
 
-(clear | wipe | chuck) (up | north):
+(clear | chuck) (up | north):
     edit.extend_line_up()
     edit.delete()
 
-(clear | wipe | chuck) (down | south):
+(clear | chuck) (down | south):
     edit.extend_line_down()
     edit.delete()
 
-(clear | wipe | chuck) word: edit.delete_word()
+(clear | chuck) word: edit.delete_word()
 
-(clear | wipe | chuck) word (left | west):
+(clear | chuck) word (left | west):
     edit.extend_word_left()
     edit.delete()
 
-(clear | wipe | chuck) word (right | east):
+(clear | chuck) word (right | east):
     edit.extend_word_right()
     edit.delete()
 
-(clear | wipe | chuck) way (left | west):
+(clear | chuck) way (left | west):
     edit.extend_line_start()
     edit.delete()
 
-(clear | wipe | chuck) way (right | east):
+(clear | chuck) way (right | east):
     edit.extend_line_end()
     edit.delete()
 
-(clear | wipe | chuck) way (up | north):
+(clear | chuck) way (up | north):
     edit.extend_file_start()
     edit.delete()
 
-(clear | wipe | chuck) way (down | south):
+(clear | chuck) way (down | south):
     edit.extend_file_end()
     edit.delete()
 
-(clear | wipe | chuck) all:
+(clear | chuck) all:
     edit.select_all()
     edit.delete()
 
