@@ -289,10 +289,10 @@ break:
 ## Extensions
 
 # Project Manager extension
-project switch <user.text>:
+project switch [<user.text>]:
     user.vscode("projectManager.listProjects")
     insert(user.text or "")
-project open <user.text>:
+project open [<user.text>]:
     user.vscode("projectManager.listProjectsNewWindow")
     insert(user.text or "")
 project save: user.vscode("projectManager.saveProject")
