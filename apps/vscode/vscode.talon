@@ -276,3 +276,27 @@ cell run: user.vscode("notebook.cell.execute")
 
 install local: user.vscode("workbench.extensions.action.installVSIX")
 preview markdown: user.vscode("markdown.showPreview")
+
+# cursorless
+break <user.cursorless_target>:
+    user.cursorless_command("setSelectionBefore", cursorless_target)
+    user.vscode("hideSuggestWidget")
+    key("enter")
+break:
+    user.vscode("hideSuggestWidget")
+    key("enter")
+
+## Extensions
+
+# Project Manager extension
+project switch <user.text>:
+    user.vscode("projectManager.listProjects")
+    insert(user.text or "")
+project open <user.text>:
+    user.vscode("projectManager.listProjectsNewWindow")
+    insert(user.text or "")
+project save: user.vscode("projectManager.saveProject")
+project edit: user.vscode("projectManager.editProjects")
+
+# Presentation Mode
+presentation mode: user.vscode("extension.presentationMode")
