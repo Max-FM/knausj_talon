@@ -93,6 +93,10 @@ file delete:
 file open folder: user.vscode("revealFileInOS")
 file reveal: user.vscode("workbench.files.action.showActiveFileInExplorer")
 save ugly: user.vscode("workbench.action.files.saveWithoutFormatting")
+folder open [<user.text>]:
+    user.vscode("workbench.action.files.openFolder")
+    sleep(50ms)
+    insert(text or "")
 
 # Language Features
 suggest show: user.vscode("editor.action.triggerSuggest")
