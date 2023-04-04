@@ -260,6 +260,9 @@ alternate_keys = {
     "forward delete": "delete",
     "page up": "pageup",
     "page down": "pagedown",
+    "cancel": "escape",
+    "stack": ":",
+    "semi stack": ";",
 }
 # mac apparently doesn't have the menu key.
 if app.platform in ("windows", "linux"):
