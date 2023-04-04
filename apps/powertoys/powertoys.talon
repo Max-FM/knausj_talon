@@ -1,1 +1,1 @@
-power run [<user.text>]$: user.powertoys_run(user.text or '')
+power [toys] run [<user.text>]$: user.powertoys_run(user.text or '')
