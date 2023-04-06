@@ -2,8 +2,8 @@ tag: user.jupyter
 -
 tag(): user.python
 
-(insert | new) [cell] below: key("escape b")
-(insert | new) [cell] above: key("escape a")
+(insert | new) cell [(below | down)]: key("escape b")
+(insert | new) [cell] (above | up): key("escape a")
 (delete | wipe | clear | chuck) cell: key("escape d d")
 (markdown | text) cell: key("escape m")
 code cell: key("escape y")
