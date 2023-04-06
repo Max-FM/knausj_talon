@@ -8,7 +8,7 @@ tag(): user.python
 (markdown | text) cell: key("escape m")
 code cell: key("escape y")
 copy cell: key("escape c")
-paste cell: key("escape v")
+(pace | paste) cell: key("escape v")
 undo cell: key("escape z")
 redo cell: key("escape shift-z")
 
