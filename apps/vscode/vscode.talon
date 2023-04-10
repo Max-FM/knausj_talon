@@ -74,8 +74,8 @@ file hunt (pace | paste):
 file copy name: user.vscode("fileutils.copyFileName")
 file copy path: user.vscode("copyFilePath")
 file copy local [path]: user.vscode("copyRelativeFilePath")
-file create sibling: user.vscode_and_wait("explorer.newFile")
-file create: user.vscode("workbench.action.files.newUntitledFile")
+file create: user.vscode_and_wait("explorer.newFile")
+file create untitled: user.vscode("workbench.action.files.newUntitledFile")
 file create relative: user.vscode("fileutils.newFile")
 file create root: user.vscode("fileutils.newFileAtRoot")
 file rename:
@@ -93,6 +93,10 @@ file delete:
 file open folder: user.vscode("revealFileInOS")
 file reveal: user.vscode("workbench.files.action.showActiveFileInExplorer")
 save ugly: user.vscode("workbench.action.files.saveWithoutFormatting")
+folder open [<user.text>]:
+    user.vscode("workbench.action.files.openFolder")
+    sleep(50ms)
+    insert(text or "")
 
 # Language Features
 suggest show: user.vscode("editor.action.triggerSuggest")
@@ -268,11 +272,29 @@ curse undo: user.vscode("cursorUndo")
 select word: user.vscode("editor.action.addSelectionToNextFindMatch")
 skip word: user.vscode("editor.action.moveSelectionToNextFindMatch")
 
-# jupyter
-cell next: user.vscode("notebook.focusNextEditor")
-cell last: user.vscode("notebook.focusPreviousEditor")
-cell run above: user.vscode("notebook.cell.executeCellsAbove")
-cell run: user.vscode("notebook.cell.execute")
-
 install local: user.vscode("workbench.extensions.action.installVSIX")
 preview markdown: user.vscode("markdown.showPreview")
+
+# Cursorless
+break <user.cursorless_target>:
+    user.cursorless_command("setSelectionBefore", cursorless_target)
+    user.vscode("hideSuggestWidget")
+    key("enter")
+break:
+    user.vscode("hideSuggestWidget")
+    key("enter")
+
+## Extensions
+
+# Project Manager extension
+project switch [<user.text>]:
+    user.vscode("projectManager.listProjects")
+    insert(user.text or "")
+project open [<user.text>]:
+    user.vscode("projectManager.listProjectsNewWindow")
+    insert(user.text or "")
+project save: user.vscode("projectManager.saveProject")
+project edit: user.vscode("projectManager.editProjects")
+
+# Presentation Mode
+presentation mode: user.vscode("extension.presentationMode")

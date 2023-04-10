@@ -41,7 +41,7 @@ arc,ark
 ascent,assent
 assistance,assistants
 augur,auger
-aunt,ant
+aunt,aren't
 oral,aural
 oriole,aureole
 away,aweigh
@@ -66,10 +66,12 @@ basis,bases
 basque,bask
 based,baste
 baited,bated
+baiter,beta
 ball,bawl
 bizarre,bazaar
 bear,bare
 beat,beet
+beater,beta
 bow,beau
 be,bee
 beach,beech
@@ -212,6 +214,7 @@ elusive,illusive,allusive
 emend,amend
 innumerable,enumerable
 errant,arrant
+eva,either
 eve,eave
 exceed,accede
 except,accept
@@ -228,6 +231,7 @@ phase,faze
 feet,feat
 fens,fends
 fete,fate
+fervor,further
 few,phew
 Phil,fill
 find,fined
@@ -242,7 +246,8 @@ fold,foaled
 for,four,fore
 foregone,forgone
 forward,foreword
-fort,forte
+fort,forte,thought
+forts,thoughts
 fourth,forth
 foul,fowl
 frank,franc
@@ -424,6 +429,9 @@ pain,pane
 palette,palate,pallet
 pair,pear,pare
 parley,parlay
+pass,parse
+passed,parsed
+passing,parsing
 past,passed
 patients,patience
 patted,padded
