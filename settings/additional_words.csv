@@ -43,3 +43,5 @@ virtualenv,virtual env
 quarto
 tokenizing
 tokenizer
+scikit-learn, sklearn
+k-nearest neighbors,k nearest neighbors

@@ -123,6 +123,7 @@ kwargs,keyword arguments
 kw,keyword
 kg,kilogram
 km,kilometer
+k-NN,k nearest neighbors
 lng,language
 lol,laugh out loud
 len,length
@@ -194,6 +195,7 @@ sp,service pack
 sid,session id
 sh,shell
 sc,shellcode
+sklearn,sklearn
 src,source
 spec,special
 spec,specific
