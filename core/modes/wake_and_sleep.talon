@@ -12,3 +12,6 @@ drowse [<phrase>]$:
     user.mouse_sleep()
     speech.disable()
     user.engine_sleep()
+    mode.disable("noise")
+deck(pedal_middle):
+    speech.toggle()
