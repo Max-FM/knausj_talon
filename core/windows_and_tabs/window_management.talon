@@ -6,6 +6,7 @@
 (window | win) (minimize | min): user.window_minimize()
 (window | win) split left: user.window_split_left()
 (window | win) split right: user.window_split_right()
+# window hide: app.window_hide()
 focus <user.running_applications>: user.switcher_focus(running_applications)
 # following only works on windows. Can't figure out how to make it work for mac. No idea what the equivalent for linux would be.
 focus$: user.switcher_menu()
