@@ -8,5 +8,16 @@
 		"throttle": {
 			"cluck": 0.12
 		}
-	}
+	},
+
+    "click": {
+        "sounds": ["lateral_click"],
+        "threshold": {
+            ">power": 20,
+            ">probability": 0.9999
+        },
+        "throttle": {
+            "click": 0.12
+        }
+    }
 }
