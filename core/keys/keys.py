@@ -259,6 +259,7 @@ alternate_keys = {
     "cancel": "escape",
     "stack": ":",
     "semi stack": ";",
+    "tick": "`",
 }
 # mac apparently doesn't have the menu key.
 if app.platform in ("windows", "linux"):
