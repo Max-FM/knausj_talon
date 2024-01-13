@@ -15,7 +15,7 @@ min
 VTT
 SQLAlchemy,sequel alchemy
 postgres
-SQL
+SQL, s q l
 df
 COVID-19,covid nineteen
 meme
@@ -55,6 +55,8 @@ docstring
 docstrings
 upsert
 upserting
-pyspark
+PySpark
 Power BI
 regex
+API
+lakehouse
