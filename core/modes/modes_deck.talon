@@ -1,4 +1,4 @@
-#defines the commands that sleep/wake Talon
+#Defines the Elgato Stream Deck Pedal commands that sleep/wake Talon
 mode: all
 -
 deck(pedal_middle):
