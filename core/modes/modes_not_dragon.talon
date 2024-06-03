@@ -31,7 +31,7 @@ not speech.engine: dragon
 ^go to sleep [<phrase>]$: speech.disable()
 ^talon sleep [<phrase>]$: speech.disable()
 
-^sleep all [<phrase>]$:
+drowse [<phrase>]$:
     user.switcher_hide_running()
     user.history_disable()
     user.homophones_hide()
@@ -39,3 +39,4 @@ not speech.engine: dragon
     user.mouse_sleep()
     speech.disable()
     user.engine_sleep()
+    mode.disable("noise")
