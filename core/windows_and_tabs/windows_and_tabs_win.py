@@ -44,6 +44,7 @@ class AppActions:
     def window_previous():
         actions.key("alt-shift-`")
 
+
 @mod.action_class
 class Actions:
     def window_maximize():
