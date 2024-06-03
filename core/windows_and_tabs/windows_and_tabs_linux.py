@@ -61,3 +61,9 @@ class AppActions:
     def window_split_right():
         """Maximize the window to the right side of the screen."""
         actions.key("super-right")
+
+
+@ctx.action_class("user")
+class UserActions:
+    def switcher_focus_last():
+        actions.key("alt-tab")
