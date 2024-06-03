@@ -54,14 +54,6 @@ class AppActions:
         """Minimize the active window."""
         actions.key("super-down")
 
-    def window_split_left():
-        """Maximize the window to the left side of the screen."""
-        actions.key("super-left")
-
-    def window_split_right():
-        """Maximize the window to the right side of the screen."""
-        actions.key("super-right")
-
 
 @ctx.action_class("user")
 class UserActions:
