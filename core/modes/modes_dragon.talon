@@ -23,5 +23,5 @@ drowse [<phrase>]$:
     user.help_hide()
     user.mouse_sleep()
     speech.disable()
-    user.engine_sleep()
+    # user.engine_sleep()
     mode.disable("noise")
