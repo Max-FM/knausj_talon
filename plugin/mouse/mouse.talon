@@ -1,5 +1,5 @@
-mouse wake: user.mouse_wake()
-mouse sleep: user.mouse_sleep()
+wake mouse: user.mouse_wake()
+sleep mouse: user.mouse_sleep()
 zoom mouse: tracking.control_zoom_toggle()
 camera overlay: tracking.control_debug_toggle()
 run calibration: tracking.calibrate()
