@@ -88,7 +88,6 @@ wheel down here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_down()
 wheel tiny [down]: user.mouse_scroll_down(0.2)
-deck(pedal_right:repeat): user.mouse_scroll_down(0.4)
 wheel tiny [down] here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_down(0.2)
@@ -101,7 +100,6 @@ wheel up here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_up()
 wheel tiny up: user.mouse_scroll_up(0.2)
-deck(pedal_left:repeat): user.mouse_scroll_up(0.4)
 wheel tiny up here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_up(0.2)
