@@ -12,6 +12,10 @@ find it: edit.find()
 next one: edit.find_next()
 
 # Navigation
+north: edit.up()
+south: edit.down()
+east: edit.right()
+west: edit.left()
 
 # The reason for these spoken forms is that "page up" and "page down" are globally defined as keys.
 scroll up: edit.page_up()
@@ -57,8 +61,8 @@ indent [more]: edit.indent_more()
 (indent less | out dent | de dent): edit.indent_less()
 
 # Delete
-clear left: edit.delete()
-clear right: user.delete_right()
+(clear | chuck) left: edit.delete()
+(clear | chuck) right: user.delete_right()
 
 (clear | chuck) up:
     edit.extend_line_up()
@@ -68,7 +72,7 @@ clear right: user.delete_right()
     edit.extend_line_down()
     edit.delete()
 
-clear word left:
+(clear | chuck) word left:
     edit.extend_word_left()
     edit.delete()
 

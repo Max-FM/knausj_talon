@@ -2,6 +2,7 @@ list: user.edit_action
 -
 
 select: select
+take: select
 go before: goBefore
 go after: goAfter
 
@@ -11,3 +12,4 @@ paste: pasteFromClipboard
 paste to: pasteFromClipboard
 
 clear: delete
+chuck: delete
