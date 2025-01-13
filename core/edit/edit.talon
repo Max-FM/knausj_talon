@@ -51,11 +51,6 @@ go page down: edit.page_down()
 (select | take) word left: edit.extend_word_left()
 (select | take) word right: edit.extend_word_right()
 
-(select | take) way left: edit.extend_line_start()
-(select | take) way right: edit.extend_line_end()
-(select | take) way up: edit.extend_file_start()
-(select | take) way down: edit.extend_file_end()
-
 # Indentation
 indent [more]: edit.indent_more()
 (indent less | out dent | de dent): edit.indent_less()
@@ -78,22 +73,6 @@ indent [more]: edit.indent_more()
 
 (clear | chuck) word right:
     edit.extend_word_right()
-    edit.delete()
-
-(clear | chuck) way left:
-    edit.extend_line_start()
-    edit.delete()
-
-(clear | chuck) way right:
-    edit.extend_line_end()
-    edit.delete()
-
-(clear | chuck) way up:
-    edit.extend_file_start()
-    edit.delete()
-
-(clear | chuck) way down:
-    edit.extend_file_end()
     edit.delete()
 
 # Copy
@@ -150,7 +129,7 @@ new line above: edit.line_insert_up()
 new line below | slap: edit.line_insert_down()
 
 # Insert padding with optional symbols
-(pad | padding): user.insert_between(" ", " ")
+padding: user.insert_between(" ", " ")
 (pad | padding) <user.symbol_key>+:
     insert(" ")
     user.insert_many(symbol_key_list)
