@@ -56,7 +56,7 @@ indent [more]: edit.indent_more()
 (indent less | out dent | de dent): edit.indent_less()
 
 # Delete
-(clear | chuck) left: edit.delete()
+(clear | chuck) [left]: edit.delete()
 (clear | chuck) right: user.delete_right()
 
 (clear | chuck) up:
