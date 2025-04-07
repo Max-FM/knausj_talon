@@ -10,6 +10,7 @@ list: user.delimiter_pair
 # pad: space space
 
 round: ( )
+args: ( )
 box: [ ]
 diamond: < >
 curly: { }
