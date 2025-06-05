@@ -11,8 +11,6 @@ os: windows
 
 @ctx.action_class("app")
 class AppActions:
-    # app.preferences()
-
     def tab_close():
         actions.key("ctrl-w")
 
