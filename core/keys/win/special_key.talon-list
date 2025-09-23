@@ -11,6 +11,7 @@ break: enter
 page down: pagedown
 page up: pageup
 escape: escape
+cancel: escape
 space: space
 tab: tab
 insert: insert
