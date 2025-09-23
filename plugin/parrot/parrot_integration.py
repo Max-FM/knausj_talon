@@ -5,7 +5,7 @@ import json
 import logging
 import time
 
-from talon import Module, resource, events
+from talon import events
 from talon.debug import log_exception
 from talon.experimental.parrot import ParrotSystem, ParrotDelegate, ParrotFrame
 from talon_init import TALON_HOME
@@ -231,7 +231,8 @@ class Delegate(ParrotDelegate):
     def load_patterns(self, pattern_path: str, classes: set[str]) -> list[NoisePattern]:
         """Load the patterns"""
         try:
-            json_patterns = json.loads(resource.read(pattern_path))
+            with open(pattern_path, 'r', encoding='utf-8') as f:
+                json_patterns = json.load(f)
             pattern_builder = PatternBuilder()
             patterns: list[NoisePattern] = []
             for key, config in json_patterns.items():
