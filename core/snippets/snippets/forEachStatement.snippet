@@ -1,11 +1,11 @@
 name: forEachStatement
-phrase: for each
+phrase: for each | each
 insertionScope: statement
 ---
 
 language: cpp
 -
-for ($1 : $2) {
+for (const auto &$1 : $2) {
     $0
 }
 ---
@@ -35,6 +35,13 @@ language: python
 -
 for $1 in $2:
     $0
+---
+
+language: rust
+-
+for $1 in $2 {
+    $0
+}
 ---
 
 language: lua

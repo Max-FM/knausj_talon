@@ -1,14 +1,16 @@
 from talon import Context, actions, settings
 
+from ...core.described_functions import create_described_insert_between
 from ..tags.operators import Operators
 
 ctx = Context()
 ctx.matches = r"""
 code.language: ruby
 """
+
 operators = Operators(
     # code_operators_array
-    SUBSCRIPT=lambda: actions.user.insert_between("[", "]"),
+    SUBSCRIPT=create_described_insert_between("[", "]"),
     # code_operators_assignment
     ASSIGNMENT=" = ",
     ASSIGNMENT_OR=" ||= ",
@@ -71,39 +73,6 @@ class UserActions:
     # Technically .present? is provided by Rails
     def code_insert_is_not_null():
         actions.auto_insert(".present?")
-
-    def code_state_do():
-        actions.insert("do ")
-
-    def code_state_if():
-        actions.user.insert_snippet_by_name("ifStatement")
-
-    def code_state_else_if():
-        actions.user.insert_snippet_by_name("elseIfStatement")
-
-    def code_state_else():
-        actions.user.insert_snippet_by_name("elseStatement")
-
-    def code_state_switch():
-        actions.user.insert_snippet_by_name("switchStatement")
-
-    def code_state_case():
-        actions.user.insert_snippet_by_name("caseStatement")
-
-    def code_state_for_each():
-        actions.user.insert_snippet_by_name("forEachStatement")
-
-    def code_define_class():
-        actions.user.insert_snippet_by_name("classDeclaration")
-
-    def code_import():
-        actions.user.insert_snippet_by_name("importStatement")
-
-    def code_comment_line_prefix():
-        actions.user.insert_snippet_by_name("commentLine")
-
-    def code_state_return():
-        actions.insert("return ")
 
     def code_insert_true():
         actions.auto_insert("true")

@@ -28,7 +28,7 @@ language: java
 import $0;
 ---
 
-language: php
+language: php | rust
 -
 use $0;
 ---
@@ -56,4 +56,9 @@ using $0;
 language: r
 -
 library(${1}${2:, warn.conflicts = FALSE})
+---
+
+language: c
+-
+#include $0
 ---

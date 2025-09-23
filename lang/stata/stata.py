@@ -1,5 +1,6 @@
 from talon import Context, actions, settings
 
+from ...core.described_functions import create_described_insert_between
 from ..tags.operators import Operators
 
 ctx = Context()
@@ -15,21 +16,6 @@ ctx.lists["user.code_parameter_name"] = {
     "V C E robust": "vce(robust)",
 }
 
-# functions_common.py
-ctx.lists["user.code_common_function"] = {
-    # base stata
-    "global": "global",
-    "local": "local",
-    "reg": "reg",
-    "regress": "reg",
-    # packages
-    "estadd": "estadd",
-    "estout": "estout",
-    "estpost": "estpost",
-    "eststo": "eststo",
-    "esttab": "esttab",
-}
-
 # libraries.py
 ctx.lists["user.code_libraries"] = {
     "estout": "estout",
@@ -37,7 +23,7 @@ ctx.lists["user.code_libraries"] = {
 
 operators = Operators(
     # code_operators_array
-    SUBSCRIPT=lambda: actions.user.insert_between("[", "]"),
+    SUBSCRIPT=create_described_insert_between("[", "]"),
     # code_operators_assignment
     ASSIGNMENT=" = ",
     # code_operators_math
@@ -45,7 +31,7 @@ operators = Operators(
     MATH_SUBTRACT=" - ",
     MATH_MULTIPLY=" * ",
     MATH_DIVIDE=" / ",
-    MATH_MODULO=lambda: actions.user.insert_between("mod(", ")"),
+    MATH_MODULO=create_described_insert_between("mod(", ")"),
     MATH_EXPONENT=" ^ ",
     MATH_EQUAL=" == ",
     MATH_NOT_EQUAL=" != ",
@@ -62,10 +48,6 @@ operators = Operators(
 class UserActions:
     def code_get_operators() -> Operators:
         return operators
-
-    # comment_line.py
-    def code_comment_line_prefix():
-        actions.user.insert_snippet_by_name("commentLine")
 
     # functions.py
     def code_private_function(text: str):
@@ -90,38 +72,6 @@ class UserActions:
         if selection:
             substitutions["0"] = selection
         actions.user.insert_snippet_by_name("functionCall", substitutions)
-
-    # imperative.py
-    def code_block():
-        actions.auto_insert("\n")
-
-    def code_state_if():
-        actions.user.insert_snippet_by_name("ifStatement")
-
-    def code_state_else_if():
-        actions.user.insert_snippet_by_name("elseIfStatement")
-
-    def code_state_else():
-        actions.user.insert_snippet_by_name("elseStatement")
-
-    def code_state_for():
-        actions.user.insert_snippet_by_name("forLoopStatement")
-
-    def code_state_for_each():
-        actions.user.insert_snippet_by_name("forEachStatement")
-
-    def code_state_while():
-        actions.user.insert_snippet_by_name("whileLoopStatement")
-
-    def code_break():
-        actions.insert("break")
-
-    def code_next():
-        actions.insert("continue")
-
-    # libraries.py
-    def code_import():
-        actions.user.insert_snippet_by_name("importStatement")
 
     # libraries.py
     def code_insert_library(text: str, selection: str):

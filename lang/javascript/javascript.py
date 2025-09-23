@@ -1,5 +1,6 @@
 from talon import Context, Module, actions, settings
 
+from ...core.described_functions import create_described_insert_between
 from ..tags.operators import Operators
 
 mod = Module()
@@ -11,24 +12,7 @@ code.language: javascriptreact
 code.language: typescriptreact
 """
 
-ctx.lists["user.code_common_function"] = {
-    "abs": "Math.abs",
-    "entries": "Object.entries",
-    "fetch": "fetch",
-    "floor": "Math.floor",
-    "from entries": "Object.fromEntries",
-    "keys": "Object.keys",
-    "log": "console.log",
-    "max": "Math.max",
-    "min": "Math.min",
-    "print": "console.log",
-    "round": "Math.round",
-    "values": "Object.values",
-}
-
-mod.list("code_common_member_function", "Function to use in a dotted chain, eg .foo()")
-
-ctx.lists["user.code_common_member_function"] = {
+ctx.lists["user.code_common_method"] = {
     "catch": "catch",
     "concat": "concat",
     "filter": "filter",
@@ -77,7 +61,7 @@ ctx.lists["user.code_keyword"] = {
 
 operators = Operators(
     # code_operators_array
-    SUBSCRIPT=lambda: actions.user.insert_between("[", "]"),
+    SUBSCRIPT=create_described_insert_between("[", "]"),
     # code_operators_assignment
     ASSIGNMENT=" = ",
     ASSIGNMENT_OR=" ||= ",
@@ -131,56 +115,11 @@ class UserActions:
     def code_insert_is_null():
         actions.auto_insert(" === null")
 
-    def code_state_if():
-        actions.user.insert_snippet_by_name("ifStatement")
-
-    def code_state_else_if():
-        actions.user.insert_snippet_by_name("elseIfStatement")
-
-    def code_state_else():
-        actions.user.insert_snippet_by_name("elseStatement")
-
     def code_self():
         actions.auto_insert("this")
 
     def code_operator_object_accessor():
         actions.auto_insert(".")
-
-    def code_state_while():
-        actions.user.insert_snippet_by_name("whileLoopStatement")
-
-    def code_state_do():
-        actions.user.insert_snippet_by_name("doWhileLoopStatement")
-
-    def code_state_return():
-        actions.insert("return ")
-
-    def code_state_for():
-        actions.user.insert_snippet_by_name("forLoopStatement")
-
-    def code_state_switch():
-        actions.user.insert_snippet_by_name("switchStatement")
-
-    def code_state_case():
-        actions.user.insert_snippet_by_name("caseStatement")
-
-    def code_state_go_to():
-        actions.auto_insert("")
-
-    def code_import():
-        actions.user.insert_snippet_by_name("importStatement")
-
-    def code_define_class():
-        actions.user.insert_snippet_by_name("classDeclaration")
-
-    def code_state_for_each():
-        actions.user.insert_snippet_by_name("forEachStatement")
-
-    def code_break():
-        actions.auto_insert("break;")
-
-    def code_next():
-        actions.auto_insert("continue;")
 
     def code_insert_true():
         actions.auto_insert("true")
@@ -190,9 +129,6 @@ class UserActions:
 
     def code_insert_null():
         actions.auto_insert("null")
-
-    def code_comment_line_prefix():
-        actions.user.insert_snippet_by_name("commentLine")
 
     def code_insert_function(text: str, selection: str):
         text += f"({selection or ''})"
